@@ -1,0 +1,20 @@
+umoham4Proj7: GridDisplay.o Creature.o Doodlebug.o Ant.o main.o
+	g++ -o umoham4Proj7 GridDisplay.o Creature.o Doodlebug.o Ant.o main.o
+
+GridDisplay.o: GridDisplay.cpp GridDisplay.h
+	g++ -c GridDisplay.cpp
+
+Creature.o: Creature.cpp Creature.h
+	g++ -c Creature.cpp
+
+Ant.o: Ant.cpp Ant.h Creature.h
+	g++ -c Ant.cpp
+
+Doodlebug.o: Doodlebug.cpp Doodlebug.h Ant.h Creature.h
+	g++ -c Doodlebug.cpp
+
+main.o: main.cpp GridDisplay.h Doodlebug.h Ant.h Creature.h
+	g++ -c main.cpp
+
+clean:
+	rm GridDisplay.o Creature.o Doodlebug.o Ant.o main.o umoham4Proj7
